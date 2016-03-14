@@ -1,9 +1,9 @@
 SPECS_PDF = doc_specs.pdf
 SPECS_TEX = src/doc_specs.tex
 
-all: doc
+all: specs
 
-doc: $(SPECS_PDF)
+specs: $(SPECS_PDF)
 
 $(SPECS_PDF): $(SPECS_TEX)
 	latexmk -use-make -pdf -pdflatex="pdflatex -interaction=nonstopmode" $<
@@ -17,4 +17,4 @@ clean:
 
 re: clean all
 
-.PHONY: all clean doc $(SPECS_PDF)
+.PHONY: all clean specs $(SPECS_PDF)
