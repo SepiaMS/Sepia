@@ -1,28 +1,68 @@
-%******************************************************************************%
-%                                                                              %
-%                                                         :::      ::::::::    %
-%    doc_specs.tex                                      :+:      :+:    :+:    %
-%                                                     +:+ +:+         +:+      %
-%    By: aguellil <aguellil@student.42.fr>          +#+  +:+       +#+         %
-%                                                 +#+#+#+#+#+   +#+            %
-%    Created: 2016/03/11 19:59:41 by aguellil          #+#    #+#              %
-%    Updated: 2016/03/11 20:03:32 by aguellil         ###   ########.fr        %
-%                                                                              %
-%******************************************************************************%
-
-\documentclass{article}
-
-\usepackage[latin1]{inputenc}
+\documentclass[a4paper,12pt,francais]{article}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage{babel}
+\usepackage{hyperref}
+\usepackage{xspace}
 
-\title{Sepia\\Cahier des charges}
+% Common abbreviations in our document
+\newcommand{\SEP}{\textsc{sep}\xspace}
+\newcommand{\Sepia}{\textsc{Sepia}\xspace}
+
+% Change some existing settings
+\renewcommand{\baselinestretch}{1.15}
+
+% Title page
+\title{\Sepia\\Cahier des charges}
+\author{
+    Ahmed \textsc{Guellil}\\
+    Dimitri \textsc{Torterat}\\
+    Pierre \textsc{Varin}
+}
+\date{\today} % Change to fixed date when this document reaches final version
+
+%%%%%
 
 \begin{document}
+\renewcommand{\contentsname}{Sommaire}
+
 \maketitle
+
+Ce document dresse le cahier des charges du projet \Sepia, un jeu vidéo mobile destiné à luter contre l’isolement des patients atteints de sclérose en plaques (\SEP). Ce RPG (jeu de rôle) permettrait de surveiller certains symptômes de manière non intrusive, tout en étant capable d’envoyer des messages automatiques aux proches ou médecins suivant les points obtenus, si le patient le souhaite.
+
+% PS: a specs document SHOULD ONLY describe what the final result would look like; what it can or cannot do. It SHOULD NOT make assumptions or order as to which language, libraries, etc. to use.
+
 \newpage
-\part{Partie}
-%\chapter{Chapitre}%
-\section{Section}
-\subsection{Une sous-section}
+\tableofcontents
+\newpage
+
+\section{Problématique}
+\subsection{Contexte}
+
+La \emph{sclérose en plaques} (\textsc{sep} est une maladie auto-immune, qui attaque le système nerveux et engendre de nombreux symptômes physiques et mentaux. Il n’existe pas de traitement curatif pour cette pathologie.
+
+Indépendamment des signes neurologiques, les patients sont régulièrement atteints d’une fatigue intense, qui apparaît plus fréquemment et plus brutalement que la fatigue non liée à la maladie, et peut être véritablement invalidante pour la vie sociale, familiale et professionnelle.
+
+Les statistiques de l’Inserm\footnote{Institut national de la santé et de la recherche médicale.} observent notamment que la maladie :
+\begin{itemize}
+\item concerne environ 80~000 personnes en France (1 personne sur 1~000) ;
+\item touche d’avantage de femmes (1 homme pour 3 femmes environ) ;
+\item commence à montrer des symptômes sérieux vers les 30 ans ;
+\end{itemize}
+
+De plus, l’Arsep\footnote{Fondation pour l'aide à la recherche sur la sclérose en plaques.} a constaté que 30~\% des enfants présentant une \SEP ont moins de 10 ans (l’âge moyen est de 12 ans).
+
+\subsection{Objectif}
+% Quels seraient les bienfaits de notre jeu sur les patients, proches et médecins ?
+
+\section{Description fonctionnelle}
+% Introduire [une fois de plus] le principe et but du jeu.
+% Inclure des schémas si besoin
+
+\subsection{Personnage}
+% Parler de la création du personnage et/ou du compte (si c’est important)
+\subsection{Environnement}
+% Parler des déplacements (et potentielle interaction avec podomètre, etc.)
+\subsection{Mini-jeux}
+
 \end{document}
