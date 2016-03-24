@@ -1,3 +1,15 @@
+%******************************************************************************%
+%                                                                              %
+%                                                         :::      ::::::::    %
+%    doc_specs.tex                                      :+:      :+:    :+:    %
+%                                                     +:+ +:+         +:+      %
+%    By: aguellil <aguellil@student.42.fr>          +#+  +:+       +#+         %
+%                                                 +#+#+#+#+#+   +#+            %
+%    Created: 2016/03/24 20:44:16 by aguellil          #+#    #+#              %
+%    Updated: 2016/03/24 22:58:36 by aguellil         ###   ########.fr        %
+%                                                                              %
+%******************************************************************************%
+
 \documentclass[a4paper,12pt,francais]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,6 +23,9 @@
 
 % Change some existing settings
 \renewcommand{\baselinestretch}{1.15}
+
+% Items prefix symbols
+% \renewcommand{\labelitemi}{$\bullet$}
 
 % Title page
 \title{\Sepia\\Cahier des charges}
@@ -51,8 +66,10 @@ Les statistiques de l’Inserm\footnote{Institut national de la santé et de la 
 
 De plus, l’Arsep\footnote{Fondation pour l'aide à la recherche sur la sclérose en plaques.} a constaté que 30~\% des enfants présentant une \SEP{} ont moins de 10 ans (l’âge moyen est de 12 ans).
 
-\subsubsection{La fatigabilité}
+\subsection{Symptômes}
 
+%\subsubsection{La fatigabilité}
+\subsubsection{Asthéniques}
 Les patients atteints de \SEP{} peuvent être affectés par quatre types de fatigue~:
 \begin{itemize}
     \item La fatigue «~normale~»~;
@@ -63,23 +80,82 @@ Les patients atteints de \SEP{} peuvent être affectés par quatre types de fati
 
 Cette dernière fatigue est généralisée, accablante, irrésistible, et peut apparaître à n’importe quel moment de la journée, et ce, sans avertissement. La personne peut même se sentir soudainement somnolente, voire tomber endormie.
 
-\subsection{Objectif} % Bienfaits et portée de notre jeu
+\subsubsection{Moteurs}
+\begin{itemize}
+    \item Troubles de la marche
+    \item Spasticité (résistance involontaire à un mouvement imposé)
+	\item Syndrome vestibulaire :
+			\begin{itemize}
+				\item Vertige rotatoire (tournis)
+				\item Nystagmus (mouvements involontaires de l'oeil)
+				\item Ataxie (manque de coordination fine des mouvements volontaires)
+			\end{itemize}
+	\item Syndrome cérébelleux :
+			\begin{itemize}
+				\item Ataxie (station debout difficile, marche perturbée)
+				\item Tremblements
+				\item Dysarthrie (trouble de l'articulation de la parole)
+			\end{itemize}
+	\item Douleur, anesthésie, voire paralysie faciale
+\end{itemize}
+\subsubsection{Visuels}
+\begin{itemize}
+    \item Névrite optique rétro-bulbaire (baisse de l'acuité visuelle accompagnée de douleurs oculaires)
+    \item Scotomes (tâches noires)
+    \item Dyschromatopsie de l'axe rouge-vert (trouble de la vision des couleurs)
+	\item Diplopie (image perçue dédoublée)
+\end{itemize}
+\subsubsection{Sensoriels}
+\begin{itemize}
+    \item Paresthésie (troubles de la sensibilité tactile : fourmillements, picotements, engourdissements)
+    \item Signe de Lhermitte positif (sensation de décharge électrique parcourant le rachis et les jambes lors de la flexion de la colonne cervicale)
+\end{itemize}
+\subsubsection{Génitaux}
+\begin{itemize}
+    \item Difficultés urinaires
+    \item Constipation
+    \item Impuissance
+\end{itemize}
+\subsubsection{Auditifs}
+\begin{itemize}
+	\item Hyperacousie
+\end{itemize}
+\subsection{Objectifs} % Bienfaits et portée de notre jeu
 
 À l’origine, l’application \Sepia{} se présente sous la forme d’un jeu vidéo afin de \emph{ne pas trop donner l’impression au patient qu’il utilise une application à portée médicale}. L’application devrait –~indirectement~– toucher l’ensemble de l’entourage de l’utilisateur~:
 \begin{description}
     \item[Le patient lui-même] \Sepia{} contribuerait directement à son bien-être, en donnant des conseils sur –~par exemple~– l’hygiène de vie, la gestion du stress, le reconditionnement à l’effort.
     \item[Les proches] % FIXME
-    \item[Le médecin] \Sepia{} ne se permettant pas d’agir en outil diagnostic, les statistiques (graphiques, etc.) recueillies par l’application permettraient au neurologue d’avoir une meilleure vision\footnote{Les rendez-vous chez un neurologue sont très rapides et espacés dans le temps~: un rendez-vous d’environ 15~minutes tous les 6~mois. Avoir une vision globale et plus ou moins exhaustive des évolution pourrait aider le médecin.} sur l’apparition et l’évolution des symptômes.
+    \item[Le médecin] \Sepia{} ne se permettant pas d’agir en outil diagnostic, les statistiques (graphiques, etc.) recueillies par l’application permettraient au neurologue d’avoir une meilleure vision\footnote{Les rendez-vous chez un neurologue sont très rapides et espacés dans le temps~: un rendez-vous d’environ 15~minutes tous les 6~mois. Avoir une vision globale et plus ou moins exhaustive des évolutions pourrait aider le médecin.} sur l’apparition et l’évolution des symptômes.
 \end{description}
 
 \section{Description fonctionnelle}
 % Introduire [une fois de plus] le principe et but du jeu.
 % Inclure des schémas si besoin
-
-\subsection{Personnage}
+L'application est centrée sur le patient, qu'elle considère comme le personnage principal du jeu de rôle, et se comporte alors comme une assistance digitale créant des interfaces entre l'univers virtuel et le monde réel dans lequel il évolue. Dès son lancement, elle propose l'accès à différents menus détaillés ci-après.
+\subsection{Avatar}
+L'avatar est la représentation virtuelle du patient. Il peut notamment reflèter sa condition par un système de \textit{sprites} ou de couleurs.
+\subsubsection{Création}
 % Parler de la création du personnage et/ou du compte (si c’est important)
-\subsection{Environnement}
+\subsubsection{Évolution}
+\subsection{Statut}
+La page de statut présente des informations liées à l'évolution du patient.
+\subsubsection{États}
+Les états reflètent, en positif comme en négatif, la condition du patient (fatigue, paralysie, etc.). Ils sont représentés par des pictogrammes qui peuvent être activés ou désactivés de manière manuelle, voire semi-automatique si l'application est capable d'en reconnaître certains.
+\subsubsection{Caractéristiques}
+Les caractéristiques sont des données quantifiables permettant de juger de la progression du patient vis à vis des quêtes qu'il lui faut remplir. Elles sont augmentées lorsque le patient progresse dans la réalisation de ces quêtes, diminuées lorsqu'il est affecté de certains symptômes. Ces augmentations ou diminutions ont, en retour, une conséquence directe sur le niveau de difficulté des épreuves.
+\subsection{Journal}
+Le journal regroupe les quêtes disponibles, en cours, et passées du patient. Ces quêtes ont pour but d'aider à mieux surmonter la maladie.
+\subsubsection{Marche}
+\subsubsection{Mémoire}
+\subsubsection{Vision}
+\subsubsection{Équilibre}
+\subsubsection{Fatigue}
+\subsubsection{Sensations}
+\subsubsection{Audition}
+\subsubsection{Mini-jeux}
 % Parler des déplacements (et potentielle interaction avec podomètre, etc.)
-\subsection{Mini-jeux}
-
+\subsection{Inventaire}
+L'inventaire
+%\subsection{Personnages Non Joueurs (PNJ)}
 \end{document}
