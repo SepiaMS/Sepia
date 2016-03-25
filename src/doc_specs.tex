@@ -6,7 +6,7 @@
 %    By: aguellil <aguellil@student.42.fr>          +#+  +:+       +#+         %
 %                                                 +#+#+#+#+#+   +#+            %
 %    Created: 2016/03/24 20:44:16 by aguellil          #+#    #+#              %
-%    Updated: 2016/03/24 22:58:36 by aguellil         ###   ########.fr        %
+%    Updated: 2016/03/25 14:13:43 by aguellil         ###   ########.fr        %
 %                                                                              %
 %******************************************************************************%
 
@@ -24,9 +24,6 @@
 % Change some existing settings
 \renewcommand{\baselinestretch}{1.15}
 
-% Items prefix symbols
-% \renewcommand{\labelitemi}{$\bullet$}
-
 % Title page
 \title{\Sepia\\Cahier des charges}
 \author{Ahmed \textsc{Guellil}\\
@@ -38,6 +35,10 @@
 %%%%%
 
 \begin{document}
+% Changes the items symbols of a list
+\renewcommand{\labelitemi}{-}
+\renewcommand{\labelitemii}{\tiny{+}}
+% Modifies the table of contents title
 \renewcommand{\contentsname}{Sommaire}
 
 \maketitle
@@ -82,7 +83,6 @@ Cette dernière fatigue est généralisée, accablante, irrésistible, et peut a
 
 \subsubsection{Moteurs}
 \begin{itemize}
-    \item Troubles de la marche
     \item Spasticité (résistance involontaire à un mouvement imposé)
 	\item Syndrome vestibulaire :
 			\begin{itemize}
@@ -93,32 +93,38 @@ Cette dernière fatigue est généralisée, accablante, irrésistible, et peut a
 	\item Syndrome cérébelleux :
 			\begin{itemize}
 				\item Ataxie (station debout difficile, marche perturbée)
-				\item Tremblements
 				\item Dysarthrie (trouble de l'articulation de la parole)
+				\item Tremblements
 			\end{itemize}
+	\item Dysphagie (sensation de gêne ou de blocage ressentie au moment de l'alimentation)
 	\item Douleur, anesthésie, voire paralysie faciale
-\end{itemize}
-\subsubsection{Visuels}
-\begin{itemize}
-    \item Névrite optique rétro-bulbaire (baisse de l'acuité visuelle accompagnée de douleurs oculaires)
-    \item Scotomes (tâches noires)
-    \item Dyschromatopsie de l'axe rouge-vert (trouble de la vision des couleurs)
-	\item Diplopie (image perçue dédoublée)
+	\item Spasmes
 \end{itemize}
 \subsubsection{Sensoriels}
 \begin{itemize}
-    \item Paresthésie (troubles de la sensibilité tactile : fourmillements, picotements, engourdissements)
-    \item Signe de Lhermitte positif (sensation de décharge électrique parcourant le rachis et les jambes lors de la flexion de la colonne cervicale)
+	\item Tactiles
+		\begin{itemize}
+			\item Hypoesthésie (diminution de la sensibilité de l'ensemble des fonctions sensorielles)
+	  		\item Paresthésie (troubles de la sensibilité tactile : fourmillements, picotements, engourdissements)
+	    	\item Signe de Lhermitte (sensation de décharge électrique parcourant le rachis et les jambes lors de la flexion de la colonne cervicale)
+		\end{itemize}
+	\item Visuels
+		\begin{itemize}
+			\item Névrite optique rétro-bulbaire (baisse de l'acuité visuelle accompagnée de douleurs oculaires)
+ 	    	\item Scotomes (tâches noires)
+	    	\item Dyschromatopsie de l'axe rouge-vert (trouble de la vision des couleurs)
+			\item Diplopie (image perçue dédoublée)
+		\end{itemize}
+	\item Auditifs
+		\begin{itemize}
+			\item Hyperacousie (intolérance aux sons variable en fréquence et en intensité)
+		\end{itemize}
 \end{itemize}
-\subsubsection{Génitaux}
+\subsubsection{Gastro-intestinaux/Uro-génitaux}
 \begin{itemize}
-    \item Difficultés urinaires
-    \item Constipation
+    \item Rétention/Incontinence
+    \item Diarrhée/Constipation
     \item Impuissance
-\end{itemize}
-\subsubsection{Auditifs}
-\begin{itemize}
-	\item Hyperacousie
 \end{itemize}
 \subsection{Objectifs} % Bienfaits et portée de notre jeu
 
