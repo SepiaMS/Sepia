@@ -128,109 +128,33 @@ Cette dernière fatigue est généralisée, accablante, irrésistible, et peut a
 % Introduire [une fois de plus] le principe et but du jeu.
 % Inclure des schémas si besoin
 
-L'application est centrée sur un avatar (symbolisant le patient), personnage principal d'un jeu de rôle, et lui propose plusieurs mini-jeux pour tester diverses aptitudes physiques ludiquement. L'application garde en mémoire ces statistiques pour avoir une trace de l'évolution des capacités du patient. Le patient-joueur est récompensé par une monnaie virtuelle, afin de l'encourager à continuer d'utiliser régulièrement l'application.
+L'application est centrée sur le patient, qu'elle considère comme le personnage principal du jeu de rôle, et se comporte alors comme une assistance digitale créant des interfaces entre l'univers virtuel et le monde réel dans lequel il évolue. Dès son lancement, elle propose l'accès à différents menus détaillés ci-après.
 
-\subsection{Menu principal}
+\subsection{Avatar}
 
-Le menu principal donne une vue rapide du compte :
-
-\subsubsection{Avatar}
-
-L'avatar du patient est un personnage censé le symboliser.
-
-\subsubsection{Niveau}
-
-Élement hérité des jeux de rôle, le niveau est ici un \emph{gimmick} (artifice). Il représente concrètement l'ancienneté d'utilisation de l'application. À chaque multiple de cinq, le patient-joueur reçoit un objet en récompense.
-
-Le niveau est obtenu lorsque la barre d'expérience est remplie. L'expérience est obtenue en complétant un mini-jeu, comme la monnaie virtuelle.
-
-\subsubsection{Statut}
-
-Le statut de l'avatar est altérable par le patient qui peut choisir dans une liste d'états divers.
-
-Les états reflètent, en positif comme en négatif, la condition du patient (fatigue, paralysie, etc.). Ils sont représentés par des pictogrammes qui peuvent être activés ou désactivés de manière manuelle, voire semi-automatique si l'application est capable d'en reconnaître certains.
-
-\subsubsection{Statistiques (aperçu)}
-
-Les statistiques sont là aussi une mécanique de jeu héritée du jeu de rôle. Elles représente grossièrement des élements-clefs à surveiller chez le patient : motricité, réflexes, mémoire, mobilité...
-
-Elles évoluent selon les résultats des mini-jeux et peuvent être temporairement altérées par certains objets (voir la section \emph{Potions}). Ces augmentations ou diminutions ont, en retour, une conséquence directe sur le niveau de difficulté des épreuves.
-
-Elles sont ici représentées sommairement. Pour une vision détaillée, voir la section \emph{Statistiques (détail)}.
-
-\subsubsection{Monnaie virtuelle}
-
-La monnaie virtuelle est obtenue par les mini-jeux et permet l'acquisition d'objets virtuels. Voir la section \emph{Magasin}.
-
-\subsubsection{Icones de menus}
-
-Via des icônes est proposé l'accès rapide aux quatres autres menus.
-
-\subsubsubsection{Quêtes - Mini-jeux}
-\subsubsubsection{Inventaire}
-\subsubsubsection{Magasin}
-\subsubsubsection{Statistiques}
-
-\subsection{Quêtes - Mini-jeux}
-
-Ces mini-jeux nous permettent de visualiser et de surveiller l'évolution des capacités du patient. Chaque mini-jeu travaille sur une capacité précise illustrée par une statistique correspondante. Le résultat du mini-jeu influe sur l'évolution de la statistique et donne un montant de monnaie virtuelle variable.
-L'utilisation des mini-jeux donne une fois par jour expérience et monnaie virtuelle calculées selon l'évolution des résultats.
-
-\subsubsection{Mémoire}
-Le joueur doit reproduire une combinaison de couleurs jouée préalablement par l'application. La longueur de la séquence, sa rapidité et le temps imparti pour la reproduction dépend de la difficulté.
-
-\subsubsection{Motricité}
-Le joueur doit garder une bille en équilibre en gardant son téléphone le plus immobile possible. La sensibilité de la bille dépend de la difficulté.
-
-\subsubsection{Réflexes}
-Le joueur est face à une version du jeu de la taupe : il doit taper le plus vite possible sur des élements surgissant de trous en face de lui. Le rythme du jeu dépend de la difficulté.
-
-\subsubsection{Mobilité}
-Le joueur peut ici consulter le total de pas effectués dans la journée, comptabilisés par la fonction podomètre de l'application.
-
-\subsection{Inventaire}
-Le patient peut ici voir les objets qu'il a acquis soit par le bonus offert tous les niveaux multiple de cinq soit par achat au magasin.
-
-\subsection{Magasin}
-
-Le patient peut ici acheter grâce à la monnaie virtuelle divers objets.
-
-\subsubsection{Couleurs}
-Récompenses graphiques destinées à visuellement améliorer l'interface, partant du sépia pour graduellement incorporer les couleurs achetées.
-
-\subsubsection{Potions}
-Récompenses ludiques destinées (lors de l'utilisation) à modifier pour douze heures les statistiques pour influencer le niveau de difficulté des quêtes. À noter que la modification artificielle des statistiques n'influence pas le calcul des récompenses des mini-jeux, ni la courbe de progression des statistiques.
-
-\subsubsection{Recettes}
-Récompenses pratiques donnant au patient plusieurs recettes culinaires de plats équilibrées pour une meilleure hygiène alimentaire.
-\emph{Section à développer}
-
-\subsection{Statistiques (détail)}
-
-Le patient peut ici voir l'évolution dans le temps des statistiques de son avatar, grâce à quatre courbes de couleurs différentes :
-
-\subsubsection{INT (Intelligence) - Mémoire}
-Courbe de couleur bleue.
-
-\subsubsection{STR (Strenght) - Motricité}
-Courbe de couleur rouge.
-
-\subsubsection{DEX (Dextérité) - Réflexes}
-Courbe de couleur jaune.
-
-\subsubsection{STA (Stamina) - Mobilité}
-Courbe de couleur verte.
+L'avatar est la représentation virtuelle du patient. Il peut notamment reflèter sa condition par un système de \textit{sprites} ou de couleurs.
 
 %\subsubsection{Création}
 % Parler de la création du personnage et/ou du compte (si c’est important)
 %\subsubsection{Évolution}
 
+\subsection{Statut}
+
+La page de statut présente des informations liées à l'évolution du patient.
+
+\subsubsection{États}
+Les états reflètent, en positif comme en négatif, la condition du patient (fatigue, paralysie, etc.). Ils sont représentés par des pictogrammes qui peuvent être activés ou désactivés de manière manuelle, voire semi-automatique si l'application est capable d'en reconnaître certains.
+
+\subsubsection{Caractéristiques}
+Les caractéristiques sont des données quantifiables permettant de juger de la progression du patient vis à vis des quêtes qu'il lui faut remplir. Elles sont augmentées lorsque le patient progresse dans la réalisation de ces quêtes, diminuées lorsqu'il est affecté de certains symptômes. Ces augmentations ou diminutions ont, en retour, une conséquence directe sur le niveau de difficulté des épreuves.
+
+\subsection{Journal}
+Le journal regroupe les quêtes disponibles, en cours, et passées du patient. Ces quêtes ont pour but d'aider à mieux surmonter sa maladie, notamment lors d'une poussée.
+
 %\subsubsection{Quêtes réelles}
 %\subsubsection{Quêtes virtuelles}
 %\subsubsection{Quêtes sociales}
 
-
-\iffalse
 \subsubsection{Exercices physiques}
 \begin{itemize}
 	\item Marche\\
@@ -256,5 +180,4 @@ Plusieurs types sont prévus :
 \subsection{Inventaire}
 L'inventaire contient des objets pouvant provenir directement de l'environnement réel du patient. Ces objets lui permettent de bénéficier d'aides à la progression.
 %\subsection{Personnages Non Joueurs (PNJ)}
-\fi
 \end{document}
