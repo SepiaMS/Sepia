@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
-\usepackage{hyperref}
+\usepackage[colorlinks, linktocpage=true]{hyperref}
 \usepackage{xspace}
 
 % Common abbreviations in our document
@@ -154,13 +154,13 @@ Les états reflètent, en positif comme en négatif, la condition du patient (fa
 
 Les statistiques sont là aussi une mécanique de jeu héritée du jeu de rôle. Elles représente grossièrement des élements-clefs à surveiller chez le patient~: motricité, réflexes, mémoire, mobilité\dots
 
-Elles évoluent selon les résultats des mini-jeux et peuvent être temporairement altérées par certains objets (voir la section \emph{Potions}). Ces augmentations ou diminutions ont, en retour, une conséquence directe sur le niveau de difficulté des épreuves.
+Elles évoluent selon les résultats des mini-jeux et peuvent être temporairement altérées par certains objets (les \nameref{subsubsec:potions}). Ces augmentations ou diminutions ont, en retour, une conséquence directe sur le niveau de difficulté des épreuves.
 
-Elles sont ici représentées sommairement. Pour une vision détaillée, voir la section \emph{Statistiques (détail)}.
+Elles sont ici représentées sommairement. Pour une vision détaillée, voir la section \nameref{subsec:stats-detail}.
 
 \subsubsection{Monnaie virtuelle}
 
-La monnaie virtuelle est obtenue par les mini-jeux et permet l'acquisition d'objets virtuels. Voir la section \emph{Magasin}.
+La monnaie virtuelle est obtenue par les mini-jeux et permet l’acquisition d’objets virtuels, en visitant le \nameref{subsec:magasin}.
 
 \subsubsection{Icônes de menu}
 
@@ -191,22 +191,21 @@ Le joueur est face à une version du jeu de la taupe~: il doit taper le plus vit
 Le joueur peut ici consulter le total de pas effectués dans la journée, comptabilisés par la fonction podomètre de l'application.
 
 \subsection{Inventaire}
-Le patient peut ici voir les objets qu'il a acquis soit par le bonus offert tous les niveaux multiple de cinq soit par achat au magasin.
+Le patient peut ici voir les objets qu’il a acquis, soit par le bonus offert tous les niveaux multiple de cinq, soit par achat au \nameref{subsec:magasin}.
 
-\subsection{Magasin}
-
+\subsection{Magasin}\label{subsec:magasin}
 Le patient peut ici acheter grâce à la monnaie virtuelle divers objets.
 
 \subsubsection{Couleurs}
 Récompenses graphiques destinées à visuellement améliorer l'interface, partant du sépia pour graduellement incorporer les couleurs achetées.
 
-\subsubsection{Potions}
+\subsubsection{Potions}\label{subsubsec:potions}
 Récompenses ludiques destinées (lors de l'utilisation) à modifier pour douze heures les statistiques pour influencer le niveau de difficulté des quêtes. À noter que la modification artificielle des statistiques n'influence pas le calcul des récompenses des mini-jeux, ni la courbe de progression des statistiques.
 
 \subsubsection{Recettes}
 Récompenses pratiques donnant au patient plusieurs recettes culinaires de plats équilibrés pour une meilleure hygiène alimentaire. % TODO Section à développer
 
-\subsection{Statistiques (détail)}
+\subsection{Statistiques (détail)}\label{subsec:stats-detail}
 
 Le patient peut ici voir l'évolution dans le temps des statistiques de son avatar, grâce à quatre courbes de couleurs différentes~:
 
@@ -241,7 +240,7 @@ Plusieurs types sont prévus~:
 \begin{itemize}
 	\item Mémorisation
 		\begin{itemize}
-			\item Une liste d'items est à mémoriser dans un temps imparti puis est à restituer dans son intégralité.
+			\item Une liste d’items est à mémoriser dans un temps imparti puis est à restituer dans son intégralité.
 			\item Une séquence visuelle apparait (par exemple des cercles de couleur s'activant les uns après les autres) et est à retracer par le joueur.
 		\end{itemize}
 	\item Résistance à la fatigue
@@ -250,7 +249,5 @@ Plusieurs types sont prévus~:
 \subsubsection{Développement social}
 %\subsubsection{Mini-jeux}
 % Parler des déplacements (et potentielle interaction avec podomètre, etc.)
-\subsection{Inventaire}
-L'inventaire contient des objets pouvant provenir directement de l'environnement réel du patient. Ces objets lui permettent de bénéficier d'aides à la progression.
 %\subsection{Personnages Non Joueurs (PNJ)}
 \end{document}
