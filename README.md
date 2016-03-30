@@ -1,5 +1,9 @@
 [🇫🇷 Specifications](https://www.sharelatex.com/github/repos/SepiaMS/Sepia/builds/latest/output.pdf)
 
+# How to contribute
+
+Read the file [`CONTRIBUTING.md`](https://github.com/SepiaMS/Sepia/blob/master/CONTRIBUTING.md).
+
 # Build instructions
 
 ## Documentation
