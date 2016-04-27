@@ -1,6 +1,6 @@
 SPECS_LINTER = ChkTeX
 SPECS_NAME = doc_specs
-SPECS_IDIR = src/doc_specs/
+SPECS_IDIR = src/doc_specs
 SPECS_ODIR = doc/
 SPECS_PDF = $(SPECS_IDIR)/$(SPECS_NAME).pdf
 SPECS_TEX = $(SPECS_IDIR)/$(SPECS_NAME).tex
@@ -11,7 +11,7 @@ specs: $(SPECS_PDF)
 
 specs_f: $(SPECS_TEX)
 	@#Forces the compilation, without checking for typos
-	@latexmk -use-make -pdf -pdflatex="pdflatex -interaction=nonstopmode" -jobname=$(SPECS_IDIR)$(SPECS_NAME) -quiet $<
+	@latexmk -use-make -pdf -pdflatex="pdflatex -interaction=nonstopmode" -jobname=$(SPECS_IDIR)/$(SPECS_NAME) -quiet $<
 	@#Copies the pdf document into the doc directory
 	@cp $(SPECS_IDIR)/$(SPECS_NAME).pdf $(SPECS_ODIR)
 
