@@ -92,7 +92,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
-  productGUID: ecb591dc155a24846920284c62389614
+  productGUID: 246aad262ae1d45e3b5b16ce99e38215
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -247,7 +247,7 @@ PlayerSettings:
   ps4ApplicationParam4: 0
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
-  ps4Passcode: PN2qmWqBlQ9wQj99nsQzldVI5ZuGXbEW
+  ps4Passcode: 2qmWqBlQ9wQj99nsQzldVI5ZuGXbEWRK
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -279,7 +279,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: RK5RhRXdCdG5nG5azdNMK66MuCV6GXi5
+  psp2PackagePassword: 5RhRXdCdG5nG5azdNMK66MuCV6GXi5xr
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
