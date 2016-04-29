@@ -9,3 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
   - enabled: 1
     path: Assets/Scenes/Home.unity
+  - enabled: 1
+    path: Assets/Scenes/Inventory.unity
+  - enabled: 1
+    path: Assets/Scenes/Quests.unity
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+  - enabled: 1
+    path: Assets/Scenes/Stats.unity

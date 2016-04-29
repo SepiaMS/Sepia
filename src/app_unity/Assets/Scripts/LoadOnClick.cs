@@ -23,7 +23,7 @@ public class LoadOnClick : MonoBehaviour {
 	{
 		this.enableLoadingImage();
 		Debug.Log ("Loading level “" + level + "”");
-		Application.LoadLevel (level);
+		Application.LoadLevelAdditive (level);
 	}
 
 }
