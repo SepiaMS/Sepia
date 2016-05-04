@@ -10,8 +10,8 @@ PlayerSettings:
   targetResolution: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: app_unity
+  companyName: Sepia
+  productName: Sepia
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -31,9 +31,9 @@ PlayerSettings:
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
-  allowedAutorotateToLandscapeRight: 1
-  allowedAutorotateToLandscapeLeft: 1
+  allowedAutorotateToPortraitUpsideDown: 0
+  allowedAutorotateToLandscapeRight: 0
+  allowedAutorotateToLandscapeLeft: 0
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
   disableDepthAndStencilBuffers: 0
@@ -85,7 +85,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Company.ProductName
+  bundleIdentifier: dev.sepia.unity
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -160,7 +160,13 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 128
+      m_Height: 128
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
@@ -372,7 +378,47 @@ PlayerSettings:
   metroTileBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities: {}
+  platformCapabilities:
+    WindowsStoreApps:
+      AccountRead: False
+      AccountWrite: False
+      AlarmGet: False
+      AlarmSet: False
+      Bluetooth: False
+      CalendarRead: False
+      CalendarWrite: False
+      Call: False
+      CallHistoryRead: False
+      CallHistoryWrite: False
+      ContactRead: False
+      ContactWrite: False
+      ContentWrite: False
+      DataSharing: False
+      Display: False
+      Download: False
+      Email: False
+      ExternalStorage: False
+      ExternalStorageAppData: False
+      KeyManager: False
+      LED: False
+      Location: False
+      MessageRead: False
+      MessageWrite: False
+      NFC: False
+      NFCCardEmulation: False
+      NetworkGet: False
+      NetworkProfile: False
+      NetworkSet: False
+      Notification: False
+      PackageManagerInfo: False
+      Power: False
+      Push: False
+      Recorder: False
+      Shortcut: False
+      Telephony: False
+      VolumeSet: False
+      WifiDirect: False
+      WindowPrioritySet: False
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
