@@ -44,19 +44,19 @@ public class GameInformation : MonoBehaviour {
 	/*
 	 * Player current scores for each Quest
 	 */
-	[DefaultValue(0)]
+//	[DefaultValue(0)]
 	public static int playerScoreDEX { get; set; }
 
-	[DefaultValue(0)]
+//	[DefaultValue(0)]
 	public static int playerScoreINT { get; set; }
 
-	[DefaultValue(0)]
+//	[DefaultValue(0)]
 	public static int playerScoreSTA { get; set; }
 
-	[DefaultValue(0)]
+//	[DefaultValue(0)]
 	public static int playerScoreSTR { get; set; }
 
-	[DefaultValue(0)]
+//	[DefaultValue(0)]
 	public static int playerScoreWIS { get; set; }
 
 

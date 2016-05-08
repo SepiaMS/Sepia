@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class Trigger : MonoBehaviour {
+	 
+//	public Sprite spriteSuccess;
 
 	void OnTriggerEnter2D(Collider2D collider ) {
 		print ("in zone\n");
-//		zone = true;
-//		gameObject.GetComponent<SpriteRenderer> ().sprite = newSprite;
-		//		gameObject.GetComponent<generate_drop> ().zone = true;
+		gameObject.GetComponent<item> ().ZoneClick = true;
+//		gameObject.GetComponent<SpriteRenderer> ().sprite = spriteSuccess;
 	}
 }
