@@ -3,14 +3,10 @@ using System.Collections;
 
 public class item : MonoBehaviour {
 
-	public bool zone;
+	public bool ZoneClick;
+
 	// Use this for initialization
 	void Start () {
-		zone = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		ZoneClick = false;
 	}
 }

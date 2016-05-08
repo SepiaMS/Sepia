@@ -3,16 +3,18 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class GameControler : MonoBehaviour {
+public class GameController : MonoBehaviour {
 
 	public float	timer;
 	public Text		timerText;
 	public Text		scoreText;
 	public Text		comboText;
+	public Image	cooldown;
+
 
 	private int		score;	
 	private int		combo;
-
+	private float	cd; 			//for "sablier" set with timer
 	private Generation item;
 	private float spawn = 0.0f;
 
@@ -22,22 +24,21 @@ public class GameControler : MonoBehaviour {
 		score = 0;
 		printText ();
 		item = GetComponent<Generation> ();
-		
+		cd = timer;	
 	}
 
 	// Update is called once per frame
 	void Update (){
-		if (timer > 0) {
+		if (timer > 0) {	
+			cooldown.fillAmount -= 1.0f/cd * Time.deltaTime; //fill sablier
 			timer -= Time.deltaTime;
-			if ( spawn > 1.0f){
-				item.DropItem(  );
+			if (spawn > 1.0f) {
+				item.DropItem ();
 				spawn = 0.0f;
 			}
 			spawn += Time.deltaTime;
 			printText ();
-		}
-		score += 1;
-
+		} 
 	}
 
 	void printText () {
@@ -48,5 +49,8 @@ public class GameControler : MonoBehaviour {
 		comboText.text = "Combo\n" + combo.ToString ();
 	}
 
+	public void addScore( int value ) {
+		score += value;
+	}
 
 }
