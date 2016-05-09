@@ -57,7 +57,19 @@ public class GameInformation : MonoBehaviour {
 	 * Methods
 	 */
 	
-	public GameInformation() {
+	// Keep this object in memory even in case of a new scene
+	public void Awake() {
+		
+		if (info == null) {
+			DontDestroyOnLoad (gameObject);
+			info = this;
+		} else if (info != this) {
+			Destroy(gameObject);
+		}
+		
+	}
+
+	public void Start() {
 		
 		inventory = new List<Sepia.item>(Sepia.defaultInventory);
 		
@@ -75,18 +87,6 @@ public class GameInformation : MonoBehaviour {
 		playerScore.Add(Sepia.stat.STA, 0);
 		playerScore.Add(Sepia.stat.STR, 0);
 		playerScore.Add(Sepia.stat.WIS, 0);
-		
-	}
-	
-	// Keep this object in memory even in case of a new scene
-	void Awake() {
-		
-		if (info == null) {
-			DontDestroyOnLoad (gameObject);
-			info = this;
-		} else if (info != this) {
-			Destroy(gameObject);
-		}
 		
 	}
 	
