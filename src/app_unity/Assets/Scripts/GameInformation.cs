@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public abstract class SepiaLogic {
+public abstract class Sepia {
+
+	public enum stat {
+		DEX,
+		INT,
+		STA,
+		STR,
+		WIS,
+	}
 
 	public enum item {
-		NOTHING,
-		
 		COLOR_Sepia,
 		
 		POTION_DEX,
@@ -17,7 +24,7 @@ public abstract class SepiaLogic {
 		RECIPE_RELAXATION,
 		RECIPE_SLEEP,
 	}
-	
+
 	public static item[] defaultInventory = {
 		item.POTION_DEX,
 		item.POTION_INT,
@@ -28,43 +35,50 @@ public abstract class SepiaLogic {
 		item.RECIPE_RELAXATION,
 		item.RECIPE_SLEEP,
 	};
+
 }
 
 public class GameInformation : MonoBehaviour {
 
+	/**
+	 * Attributes
+	 */
+
+	// The player’s inventory
+	public List<Sepia.item> inventory;
+
+	// The player’s current score(s)
+	public Dictionary<Sepia.stat, int> playerScore;
+
+
+	/**
+	 * Methods
+	 */
+	
+	public GameInformation() {
+
+		inventory = new List<Sepia.item>(Sepia.defaultInventory);
+
+		// inventory.Add (Sepia.item.POTION_DEX);
+		// …
+		// foreach (Sepia.item it in inventory) {
+		// 	print (it);
+		// }
+
+
+		Dictionary<Sepia.stat, int> playerScore = new Dictionary<Sepia.stat, int>();
+
+		playerScore.Add(Sepia.stat.DEX, 0);
+		playerScore.Add(Sepia.stat.INT, 0);
+		playerScore.Add(Sepia.stat.STA, 0);
+		playerScore.Add(Sepia.stat.STR, 0);
+		playerScore.Add(Sepia.stat.WIS, 0);
+
+	}
+
 	// Keep this object in memory even in case of a new scene
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
-	}
-
-	// The player’s inventory
-	public static item[] inventory { get; set; }
-	
-
-	/*
-	 * Player current scores for each Quest
-	 */
-//	[DefaultValue(0)]
-	public static int playerScoreDEX { get; set; }
-
-//	[DefaultValue(0)]
-	public static int playerScoreINT { get; set; }
-
-//	[DefaultValue(0)]
-	public static int playerScoreSTA { get; set; }
-
-//	[DefaultValue(0)]
-	public static int playerScoreSTR { get; set; }
-
-//	[DefaultValue(0)]
-	public static int playerScoreWIS { get; set; }
-
-
-	// Set some default values to objects created
-	public GameInformation() {
-
-		SepiaLogic.item[] inventory = SepiaLogic.defaultInventory;
-
 	}
 	
 }
