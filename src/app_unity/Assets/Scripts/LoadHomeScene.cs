@@ -7,9 +7,4 @@ public class LoadHomeScene : LoadOnClick {
 	void Start () {
 		LoadSceneByName ("Home");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

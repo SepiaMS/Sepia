@@ -15,14 +15,14 @@ public class LoadOnClick : MonoBehaviour {
 	public void LoadScene(int level)
 	{
 		this.enableLoadingImage();
-		Debug.Log ("Loading level #" + level);
+		//Debug.Log ("Loading level #" + level);
 		Application.LoadLevel (level);
 	}
 
 	public void LoadSceneByName(string level)
 	{
 		this.enableLoadingImage();
-		Debug.Log ("Loading level “" + level + "”");
+		//Debug.Log ("Loading level “" + level + "”");
 		Application.LoadLevelAdditive (level);
 	}
 
