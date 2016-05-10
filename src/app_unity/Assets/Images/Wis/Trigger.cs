@@ -10,7 +10,12 @@ public class Trigger : MonoBehaviour {
 		gameObject.GetComponent<item> ().ZoneClick = true;
 //		gameObject.GetComponent<SpriteRenderer> ().sprite = spriteSuccess;
 	}
-	void OnTriggerExit2D(Collider2D collider ) {
 
+	void OnTriggerExit2D(Collider2D collider ) {
+		if (gameObject.GetComponent<SpriteRenderer> ().sprite.name != "wis success") { // wis succuess warning name of srpite
+			print ("On triger exit : wis succuessKO ");
+			FindObjectOfType<Generation> ().combo = false;
+			FindObjectOfType<GameController>().UpdateCombo();
+		}
 	}
 }

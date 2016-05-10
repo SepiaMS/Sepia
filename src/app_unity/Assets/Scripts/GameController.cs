@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour {
 	private Generation item;
 	private float spawn = 0.0f;
 
+	public bool c = true;
 	// Use this for initialization
 	void Start () {
 		combo = 0;
@@ -57,10 +58,8 @@ public class GameController : MonoBehaviour {
  	}
 
 	public void UpdateCombo ( ) {
-		if (score > preScore) {
-			combo += 1;
-			preScore = score;
-		} else
+		combo += 1;
+		if (item.combo == false )
 			combo = 0;
 	}
 }

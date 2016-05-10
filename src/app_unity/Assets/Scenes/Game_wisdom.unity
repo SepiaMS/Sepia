@@ -512,6 +512,7 @@ MonoBehaviour:
   scoreText: {fileID: 599605796}
   comboText: {fileID: 534581532}
   cooldown: {fileID: 1091775291}
+  c: 1
 --- !u!114 &350420829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 147344, guid: 9b73bd159e7644d1a98277a3dda584c6, type: 2}
+  combo: 0
 --- !u!1 &437454950
 GameObject:
   m_ObjectHideFlags: 0
