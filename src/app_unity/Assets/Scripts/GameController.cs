@@ -12,8 +12,9 @@ public class GameController : MonoBehaviour {
 	public Image	cooldown;
 
 
-	private int		score;	
-	private int		combo;
+	private int		score;			// score to display
+	private int		preScore;		// previous score for combo
+	private int		combo;			// combo to display
 	private float	cd; 			//for "sablier" set with timer
 	private Generation item;
 	private float spawn = 0.0f;
@@ -22,6 +23,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		combo = 0;
 		score = 0;
+		preScore = 0;
 		printText ();
 		item = GetComponent<Generation> ();
 		cd = timer;	
@@ -37,8 +39,8 @@ public class GameController : MonoBehaviour {
 				spawn = 0.0f;
 			}
 			spawn += Time.deltaTime;
-			printText ();
 		} 
+		printText ();
 	}
 
 	void printText () {
@@ -50,7 +52,15 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void addScore( int value ) {
+		print ("Score = " + score + " & value = " + value);
 		score += value;
-	}
+ 	}
 
+	public void UpdateCombo ( ) {
+		if (score > preScore) {
+			combo += 1;
+			preScore = score;
+		} else
+			combo = 0;
+	}
 }

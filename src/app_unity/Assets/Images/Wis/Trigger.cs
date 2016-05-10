@@ -10,4 +10,7 @@ public class Trigger : MonoBehaviour {
 		gameObject.GetComponent<item> ().ZoneClick = true;
 //		gameObject.GetComponent<SpriteRenderer> ().sprite = spriteSuccess;
 	}
+	void OnTriggerExit2D(Collider2D collider ) {
+
+	}
 }

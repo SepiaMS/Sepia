@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ 	using UnityEngine;
 using System.Collections;
 
 public class Touch : MonoBehaviour {
@@ -35,8 +35,10 @@ public class Touch : MonoBehaviour {
 			if ( hit.collider != null )
 			{
 				if ( gameObject.GetComponent<item> ().ZoneClick == true){
+
+					Debug.Log( hit.collider.name + "score value = " + scoreValue);
 					gameController.addScore( scoreValue );	
-					Debug.Log( hit.collider.name );
+					gameController.UpdateCombo();
 					gameObject.GetComponent<SpriteRenderer> ().sprite = spriteSuccess;
 					
 //				}
