@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public abstract class Sepia {
 	
 	public enum stat {
+		NONE,
+
 		DEX,
 		INT,
 		STA,
@@ -44,13 +46,15 @@ public class GameInformation : MonoBehaviour {
 	 * Attributes
 	 */
 	
-	public static GameInformation info;
+	public static GameInformation game;
+
+	public SaveInformation save { get; set; }
 	
 	/// The player’s inventory
-	public List<Sepia.item> inventory;
+	public List<Sepia.item> inventory { get; set; }
 	
 	/// The player’s current score(s)
-	public Dictionary<Sepia.stat, int> playerScore;
+	public Dictionary<Sepia.stat, int> playerScore { get; set; }
 	
 	
 	/**
@@ -60,10 +64,10 @@ public class GameInformation : MonoBehaviour {
 	// Keep this object in memory even in case of a new scene
 	public void Awake() {
 		
-		if (info == null) {
+		if (game == null) {
 			DontDestroyOnLoad (gameObject);
-			info = this;
-		} else if (info != this) {
+			game = this;
+		} else if (game != this) {
 			Destroy(gameObject);
 		}
 		

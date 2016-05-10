@@ -2,19 +2,61 @@
 using System.Collections;
 
 public class SaveInformation : MonoBehaviour {
+
+	public string statName;
 	
-	public static void SaveAllInformation() {
+	private GameInformation game;
+
+	public void Start() {
+
+		game = FindObjectOfType<GameInformation>();
+		if (game == null) {
+			Debug.LogError("The gameObject with `GameInformation` attached has not been found");
+		}
+
+	}
+
+	public void SaveAllInformation() {
 		
 		// Need to “manually serialize” because dictionaries aren’t serializable
-		SaveStat(Sepia.stat.DEX);
-		SaveStat(Sepia.stat.INT);
-		SaveStat(Sepia.stat.STA);
-		SaveStat(Sepia.stat.STR);
-		SaveStat(Sepia.stat.WIS);
+		this.SaveStat(Sepia.stat.DEX);
+		this.SaveStat(Sepia.stat.INT);
+		this.SaveStat(Sepia.stat.STA);
+		this.SaveStat(Sepia.stat.STR);
+		this.SaveStat(Sepia.stat.WIS);
 		
 	}
+
+	public void SaveStat() {
+
+		Sepia.stat stat_type = Sepia.stat.NONE;
+
+		if (statName != null) {
+			if (statName.Contains ("DEX")) {
+				stat_type = Sepia.stat.DEX;
+			} else if (statName.Contains ("INT")) {
+				stat_type = Sepia.stat.INT;
+			} else if (statName.Contains ("STA")) {
+				stat_type = Sepia.stat.STA;
+			} else if (statName.Contains ("STR")) {
+				stat_type = Sepia.stat.STR;
+			} else if (statName.Contains ("WIS")) {
+				stat_type = Sepia.stat.WIS;
+			}
+		} else {
+			Debug.LogError("Field “Stat Name” is empty");
+		}
+
+		if (stat_type != Sepia.stat.NONE) {
+			SaveStat(stat_type);
+			Debug.LogFormat("Stat “{0}” saved.", statName);
+		} else {
+			Debug.LogError("Stat has not been saved because it is not supported in this code.");
+		}
+
+	}
 	
-	public static void SaveStat(Sepia.stat statType) {
+	private void SaveStat(Sepia.stat statType) {
 		
 		string stat_name = null;
 		
@@ -37,7 +79,7 @@ public class SaveInformation : MonoBehaviour {
 		}
 		
 		if (stat_name != null) {
-			PlayerPrefs.SetInt (stat_name, GameInformation.info.playerScore [statType]);
+			PlayerPrefs.SetInt (stat_name, this.game.playerScore[statType]);
 		} else {
 			Debug.LogWarningFormat("Stat has not been saved because it is not supported in this code.");
 		}
