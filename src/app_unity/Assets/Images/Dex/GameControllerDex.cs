@@ -3,8 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class GameControllerInt : MonoBehaviour {
+public class GameControllerDex : MonoBehaviour {
 
+	public Text		comboText;
+	public Text		scoreText;
 	public float	timer;
 	public Text		timerText;
 	public Text		yourturnText;
@@ -16,14 +18,15 @@ public class GameControllerInt : MonoBehaviour {
 
 	public int		seqSize;
 	private int[] 	seq; 			// sequence of pc generation
-	private int[] 	seqPlayer; 		// sequence of Player
 	private int 	countClick;
-	public GameObject tmp;
+	private GameObject tmp;
 
-	public Sprite spriteSuccess;
-	public Sprite spriteSuccessBis;
-	public Sprite spriteBis;
-	public Sprite sprite;
+	public Sprite spriteOff;
+	public Sprite spriteOffUp;
+	public Sprite spriteOn;
+	public Sprite spriteOnUp;
+	public Sprite spriteHight;
+	public Sprite spriteHightUp;
 
 	private float	cd; 			//for "sablier" set with timer
 	private bool 	youturn = false;
@@ -33,27 +36,15 @@ public class GameControllerInt : MonoBehaviour {
 	void Start () {
 		cd = timer;						// init cooldown with timer public 
 		seq = new int[seqSize];			// init size of sequence
-		seqPlayer = new int[seqSize];
-		SequenceDemo ();				// init sequence 
 		countClick = 0;					// TODO check if resart work
-		StartCoroutine ("showSequence");
+		SequenceStart ();
+		StartCoroutine (showStart());
+	
 	}
 
-	bool checkSeq(){
-		for (int i = 0; i < seqSize; i++) {
-			if (seqPlayer[i] != seq[i])
-				return false;
-		}
-		return true;
-	}
 
 	void endGame(){
-//		if (countClick + 1 == seqSize)	// + 1 for alignement in sequence
-		youturn = false;
-		if (checkSeq())
-			endText.text = "WIN";
-		else 
-			endText.text = "LOSE";
+			endText.text = "FIN";
 	}
 
 	// Update is called once per frame
@@ -63,15 +54,9 @@ public class GameControllerInt : MonoBehaviour {
 			if (timer > 0) {	
 				cooldown.fillAmount -= 1.0f / cd * Time.deltaTime; //fill sablier
 				timer -= Time.deltaTime;
-			
-
-			if (countClick == seqSize  ){
-				print ("tmp END GAME count " + countClick + "seqSize = " + seqSize);
-				endGame();
-			}
-			else
 				Onclick();
-			}
+			}else
+				endGame();
 		}
 		printText ();
 	}
@@ -88,7 +73,6 @@ public class GameControllerInt : MonoBehaviour {
 			//If something was hit, the RaycastHit2D.collider will not be null.
 			if (hit.collider != null) {
 				print ("Onclick");
-				seqPlayer[countClick] = int.Parse(hit.collider.name); 
 				Debug.Log (hit.collider.name);
 				countClick++;
 				StartCoroutine(showClick(int.Parse(hit.collider.name)));
@@ -102,45 +86,51 @@ public class GameControllerInt : MonoBehaviour {
 		timerText.text = timer.ToString ("0.00");		// "0:00:00" format is possible 
 	}
 
-	private void SequenceDemo() {
+	private void SequenceStart() {
 		for (int i = 0; i < seqSize; i++)
-			seq [i] = Random.Range(1, 7); 				// random 1-6 generate sequence
+			seq [i] = Random.Range(1, 11); 				// random 1-6 generate sequence
 	}
 
-	void ShowSprite(int iname){
+	void HiToOn(int iname){
 		tmp = GameObject.Find(iname.ToString());
-		if (tmp.name == "6") {
-			tmp.GetComponent<Image> ().sprite = spriteSuccessBis;
+		if (iname % 2 == 0) {
+			tmp.GetComponent<Image> ().sprite = spriteOnUp;
 		}
 		else
-			tmp.GetComponent<Image> ().sprite = spriteSuccess;
+			tmp.GetComponent<Image> ().sprite = spriteOn;
 
 	}
 
-	void HideSprite(int iname){
+	void OffToHi(int iname){
 		tmp = GameObject.Find(iname.ToString());
-		if (tmp.name == "6")
-			tmp.GetComponent<Image> ().sprite = spriteBis;
-		else 
-			tmp.GetComponent<Image> ().sprite = sprite;
+		if (iname % 2 == 0) {
+			tmp.GetComponent<Image> ().sprite = spriteHightUp;
+		}
+		else
+			tmp.GetComponent<Image> ().sprite = spriteHight;
+	}
+
+	void OnToOff(int iname){
+		tmp = GameObject.Find(iname.ToString());
+		if (iname % 2 == 0) {
+			tmp.GetComponent<Image> ().sprite = spriteOffUp;
+		}
+		else
+			tmp.GetComponent<Image> ().sprite = spriteOff;
 	}
 
 	IEnumerator showClick(int iname ){
-		ShowSprite (iname);
+		OffToHi (iname);
 		yield return new WaitForSeconds (delay/2);
-		HideSprite (iname);
-		yield return new WaitForSeconds (delay/4);
+		HiToOn (iname);
+		yield return new WaitForSeconds (delay);
 	}
+
 	
-	IEnumerator showSequence()
-	{
+	IEnumerator showStart(){
 		foreach (int iname in seq) {
-			ShowSprite ((int)iname);
-			yield return new WaitForSeconds (delay);
-			HideSprite ((int)iname);
-			yield return new WaitForSeconds (delay/2); // if not add delay we dont see twice in row 
+			OnToOff (iname);
+			yield return new WaitForSeconds (delay/2);
 		}
-		youturn = true;
-		yourturnText.text = "Your Turn";
 	}
 }
