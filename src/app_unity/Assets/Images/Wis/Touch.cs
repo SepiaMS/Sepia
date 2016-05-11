@@ -30,8 +30,6 @@ public class Touch : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast(worldPoint,Vector2.zero);
 			
 			//If something was hit, the RaycastHit2D.collider will not be null.
-
-
 			if ( hit.collider != null )
 			{
 				if ( gameObject.GetComponent<item> ().ZoneClick == true){
@@ -39,9 +37,9 @@ public class Touch : MonoBehaviour {
 					Debug.Log( hit.collider.name + "score value = " + scoreValue);
 					gameController.addScore( scoreValue );	
 					gameController.UpdateCombo();
+					FindObjectOfType<Generation> ().combo = true;
 					gameObject.GetComponent<SpriteRenderer> ().sprite = spriteSuccess;
 					
-//				}
 			}
 		}
 	}
@@ -49,33 +47,3 @@ public class Touch : MonoBehaviour {
 }
 
 }
-
-/*
- * 
- * 
- * void Update () {
-		if (Input.GetMouseButtonDown (0)) {
-			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-//			print (hit);
-			if (hit){
-//				Debug.Log (hit.collider.gameObject.name);
-
-				if ( gameObject.GetComponent<item> ().ZoneClick == true)
-				{
-					gameController.addScore( scoreValue );	
-//					gameObject.GetComponent<SpriteRenderer> ().sprite = spriteSuccess;
-
-//					 gameObject.GetComponent<GameControler> ().addScore(10);
-					// GameControler.addScore( 10 );
-//					DestroyObject(gameObject);
-				}
-
-
-			}
-			else
-				Debug.Log ("pas de collisions");
-			
-		}
-	}
-
-*/

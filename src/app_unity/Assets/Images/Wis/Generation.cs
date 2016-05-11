@@ -7,10 +7,15 @@ public class Generation : MonoBehaviour {
 	
 	private int 			row;											//placement of drop in game
 	private int				rename = 0;
+	public bool combo;
 
 	void Start(){
 		rename = 0;
+		prefab.tag = "piece"; 
+		combo = true;
+
 	}
+
 	public void DropItem (){
 		rename++;
 		row = Random.Range (-2, 2);											//row |-2 | -1 | 0 | 1 | 2 
