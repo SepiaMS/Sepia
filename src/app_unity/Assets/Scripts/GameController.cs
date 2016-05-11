@@ -11,36 +11,56 @@ public class GameController : MonoBehaviour {
 	public Text		comboText;
 	public Image	cooldown;
 
-
+	private bool	scoreSaved;
 	private int		score;			// score to display
 	private int		preScore;		// previous score for combo
 	private int		combo;			// combo to display
 	private float	cd; 			//for "sablier" set with timer
 	private Generation item;
 	private float spawn = 0.0f;
+	private GameInformation game;
 
 	public bool c = true;
 	// Use this for initialization
 	void Start () {
+		scoreSaved = false;
 		combo = 0;
 		score = 0;
 		preScore = 0;
 		printText ();
 		item = GetComponent<Generation> ();
-		cd = timer;	
+		cd = timer;
+
+		game = FindObjectOfType<GameInformation>();
+		if (game == null) {
+			Debug.LogError ("`GameInformation` gameObject not found");
+		} else {
+			game.save = FindObjectOfType<SaveInformation>();
+			if (game.save == null) {
+				Debug.LogError ("`SaveInformation` object not found – not added to `game.save`");
+			}
+		}
+
 	}
 
 	// Update is called once per frame
 	void Update (){
-		if (timer > 0) {	
-			cooldown.fillAmount -= 1.0f/cd * Time.deltaTime; //fill sablier
+		if (timer > 0) {
+			cooldown.fillAmount -= 1.0f / cd * Time.deltaTime; //fill sablier
 			timer -= Time.deltaTime;
 			if (spawn > 1.0f) {
 				item.DropItem ();
 				spawn = 0.0f;
 			}
 			spawn += Time.deltaTime;
-		} 
+		} else {
+			// Game is finished
+
+			if (!this.scoreSaved) {
+				game.save.SaveStat();
+				this.scoreSaved = true;
+			}
+		}
 		printText ();
 	}
 
@@ -62,4 +82,5 @@ public class GameController : MonoBehaviour {
 		if (item.combo == false )
 			combo = 0;
 	}
+
 }

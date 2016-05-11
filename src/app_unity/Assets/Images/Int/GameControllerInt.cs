@@ -10,8 +10,11 @@ public class GameControllerInt : MonoBehaviour {
 	private float	cd; 			//for "sablier" set with timer
 	public Image	cooldown;
 
+
+	public float    delay = 1.0f;
 	public GameObject test;
 	public Sprite spriteSuccess;
+	static int  iseq = 0;
 	// Use this for initialization
 	void Start () {
 		cd = timer;
@@ -21,7 +24,7 @@ public class GameControllerInt : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update (){
-		
+		SequenceDemo();
 //		test.GetComponent<SpriteRenderer>().sprite = spriteSuccess;
 		
 		if (timer > 0) {	
@@ -40,14 +43,18 @@ public class GameControllerInt : MonoBehaviour {
 	}
 
 	public void SequenceDemo() {
+		print (delay + " i " + iseq);
 		int[] seq = new int[5];
 		for (int i =0; i < 5; i++)
 			seq [i] = Random.Range(1, 7);
-		foreach ( int e in seq )
-		{
 
-			showSequence( (int)e );
-
+		if (delay > 0) {
+			delay -= Time.deltaTime;
+		}
+		else {
+			showSequence (seq[iseq]);
+			delay = 1.0f;
+			iseq++;
 		}
 	}
 
