@@ -801,7 +801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 5
   timerText: {fileID: 297408083}
-  yourturnText: {fileID: 0}
+  yourturnText: {fileID: 46468773}
   cooldown: {fileID: 1091775291}
   delay: 1
   seqSize: 5
