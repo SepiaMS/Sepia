@@ -48,6 +48,7 @@ public class GameControllerInt : MonoBehaviour {
 	}
 
 	void endGame(){
+//		if (countClick + 1 == seqSize)	// + 1 for alignement in sequence
 		youturn = false;
 		if (checkSeq())
 			endText.text = "WIN";
@@ -62,7 +63,7 @@ public class GameControllerInt : MonoBehaviour {
 			if (timer > 0) {	
 				cooldown.fillAmount -= 1.0f / cd * Time.deltaTime; //fill sablier
 				timer -= Time.deltaTime;
-			}
+			
 
 			if (countClick == seqSize  ){
 				print ("TEST END GAME count " + countClick + "seqSize = " + seqSize);
@@ -70,6 +71,7 @@ public class GameControllerInt : MonoBehaviour {
 			}
 			else
 				Onclick();
+			}
 		}
 		printText ();
 	}
