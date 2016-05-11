@@ -6,14 +6,14 @@ using System.Collections;
 public class Click2 : MonoBehaviour, IPointerClickHandler {
 	public Click[] clicks;
 	
-	private string gameToPlay;
+	private static string gameToPlay;
 	
 	public void OnPointerClick (PointerEventData eventData) {
 		
 		foreach (Click c in clicks) {
-			if (c.Truc()) {
+			if (c.Truc ()) {
 				
-				UnityEngine.UI.Text questDescription = GameObject.Find("QuestScrollText").GetComponent<UnityEngine.UI.Text>();
+				UnityEngine.UI.Text questDescription = GameObject.Find ("QuestScrollText").GetComponent<UnityEngine.UI.Text> ();
 				
 				switch (c.name) {
 					
@@ -37,18 +37,23 @@ public class Click2 : MonoBehaviour, IPointerClickHandler {
 					
 				}
 				
-				return ;
-			}
-			else {
-				
-				if (gameToPlay == null) {
-					Debug.LogWarning("`gameToPlay` field is empty; Clicking “Play” won’t do anything");
-				} else {
-					Button playButton = GameObject.Find("playButton").GetComponent<Button>();
-					playButton.onClick.AddListener(delegate() { Application.LoadLevel(gameToPlay); });
-				}
-
+				return;
 			}
 		}
+
 	}
+
+	public void LoadLevel()
+	{
+		if (gameToPlay == null) {
+			Debug.LogWarning("`gameToPlay` field is empty; Clicking “Play” won’t do anything");
+		} else {
+			string tmpLvlName = gameToPlay;
+			gameToPlay = null;
+
+			Application.LoadLevel(tmpLvlName);
+
+		}
+	}
+
 }
