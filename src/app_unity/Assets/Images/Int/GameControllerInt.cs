@@ -7,32 +7,36 @@ public class GameControllerInt : MonoBehaviour {
 
 	public float	timer;
 	public Text		timerText;
+	public Text		yourturnText;
 	private float	cd; 			//for "sablier" set with timer
 	public Image	cooldown;
 
 
-	public float    delay = 1.0f;
+	public float    delay;
+	private bool 	youturn = false;
+	public int		seqSize;
 	public GameObject test;
 	public Sprite spriteSuccess;
-	static int  iseq = 0;
+	public Sprite sprite;
+	int[] seq;
 	// Use this for initialization
 	void Start () {
 		cd = timer;
 		printText ();
-		SequenceDemo();
+		seq = new int[seqSize];
+		SequenceDemo ();
+		StartCoroutine ("showSequence");
 	}
 
 	// Update is called once per frame
 	void Update (){
-		SequenceDemo();
-//		test.GetComponent<SpriteRenderer>().sprite = spriteSuccess;
-		
-		if (timer > 0) {	
-			cooldown.fillAmount -= 1.0f/cd * Time.deltaTime; //fill sablier
-			timer -= Time.deltaTime;
-		} 
+		if (youturn) {
+			if (timer > 0) {	
+				cooldown.fillAmount -= 1.0f / cd * Time.deltaTime; //fill sablier
+				timer -= Time.deltaTime;
+			}
+		}
 		printText ();
-		test = GameObject.Find("1");
 	}
 
 
@@ -43,26 +47,32 @@ public class GameControllerInt : MonoBehaviour {
 	}
 
 	public void SequenceDemo() {
-		print (delay + " i " + iseq);
-		int[] seq = new int[5];
-		for (int i =0; i < 5; i++)
+		for (int i = 0; i < seqSize; i++)
 			seq [i] = Random.Range(1, 7);
-
-		if (delay > 0) {
-			delay -= Time.deltaTime;
-		}
-		else {
-			showSequence (seq[iseq]);
-			delay = 1.0f;
-			iseq++;
-		}
 	}
 
-	private int showSequence(int e){
 
-		test = GameObject.Find(e.ToString());
+	IEnumerator showSequence()
+	{
+		foreach (int iname in seq) {
+			ShowSprite ((int)iname);
+			yield return new WaitForSeconds (delay);
+			HideSprite ((int)iname);
+		}
+		youturn = true;
+		yourturnText.text = "Your Turn";
+
+
+	}
+
+	void ShowSprite(int iname){
+		test = GameObject.Find(iname.ToString());
 		test.GetComponent<Image> ().sprite = spriteSuccess;
-		print ("e = " + e.ToString());
-		return 0;
 	}
+
+	void HideSprite(int iname){
+		test = GameObject.Find(iname.ToString());
+		test.GetComponent<Image> ().sprite = sprite;
+	}
+
 }
