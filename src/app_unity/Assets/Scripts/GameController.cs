@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour {
 
 	private bool	scoreSaved;
 	private int		score;			// score to display
-	private int		preScore;		// previous score for combo
 	private int		combo;			// combo to display
 	private float	cd; 			//for "sablier" set with timer
 	private Generation item;
@@ -26,7 +25,6 @@ public class GameController : MonoBehaviour {
 		scoreSaved = false;
 		combo = 0;
 		score = 0;
-		preScore = 0;
 		printText ();
 		item = GetComponent<Generation> ();
 		cd = timer;
