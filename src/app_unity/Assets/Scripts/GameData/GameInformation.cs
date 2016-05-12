@@ -56,7 +56,6 @@ public class GameInformation : MonoBehaviour {
 	/// The player’s current score(s)
 	public Dictionary<Sepia.stat, int> playerScore { get; set; }
 	
-	
 	/**
 	 * Methods
 	 */
@@ -84,7 +83,7 @@ public class GameInformation : MonoBehaviour {
 		// }
 		
 		
-		Dictionary<Sepia.stat, int> playerScore = new Dictionary<Sepia.stat, int>();
+		playerScore = new Dictionary<Sepia.stat, int> ();
 		
 		playerScore.Add(Sepia.stat.DEX, 0);
 		playerScore.Add(Sepia.stat.INT, 0);
