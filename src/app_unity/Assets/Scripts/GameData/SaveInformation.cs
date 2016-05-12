@@ -11,7 +11,7 @@ public class SaveInformation : MonoBehaviour {
 
 		game = FindObjectOfType<GameInformation>();
 		if (game == null) {
-			Debug.LogError("The gameObject with `GameInformation` attached has not been found");
+			Debug.LogWarning("The gameObject with `GameInformation` attached has not been found");
 		}
 
 	}
@@ -27,7 +27,7 @@ public class SaveInformation : MonoBehaviour {
 		
 	}
 
-	public void SaveStat() {
+	public void SaveStat(int score) {
 
 		Sepia.stat stat_type = Sepia.stat.NONE;
 
@@ -48,8 +48,9 @@ public class SaveInformation : MonoBehaviour {
 		}
 
 		if (stat_type != Sepia.stat.NONE) {
+			this.game.playerScore[stat_type] = score;
 			SaveStat(stat_type);
-			Debug.LogFormat("Stat “{0}” saved.", statName);
+			Debug.LogFormat("Stat “{0}” saved (score: {1})", statName, score);
 		} else {
 			Debug.LogError("Stat has not been saved because it is not supported in this code.");
 		}

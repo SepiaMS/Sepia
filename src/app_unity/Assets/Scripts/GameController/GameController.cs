@@ -28,6 +28,10 @@ public class GameController : MonoBehaviour {
 
 		cd = timer;
 
+	}
+
+	protected void init() {
+		
 		game = FindObjectOfType<GameInformation>();
 		if (game == null) {
 			Debug.LogWarning ("`GameInformation` gameObject not found");
@@ -42,7 +46,7 @@ public class GameController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update (){
-		print ("update GameCOntroler");
+		//print ("update GameControler");
 		CheckTimer ();
 		printText ();
 	}
@@ -59,9 +63,8 @@ public class GameController : MonoBehaviour {
 			return true;
 		} else {
 			// Game is finished
-			
 			if (!this.scoreSaved) {
-				GameInformation.game.playerScore[Sepia.stat.WIS] = score;
+				GameInformation.game.save.SaveStat(score);
 				this.scoreSaved = true;
 			}
 
@@ -80,7 +83,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void addScore( int value ) {
-		print ("Score = " + score + " & value = " + value);
+		//print ("Score = " + score + " & value = " + value);
 		score += value;
  	}
 
