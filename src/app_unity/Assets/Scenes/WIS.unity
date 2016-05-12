@@ -472,6 +472,7 @@ GameObject:
   - 224: {fileID: 350420827}
   - 114: {fileID: 350420829}
   - 114: {fileID: 350420828}
+  - 114: {fileID: 350420830}
   m_Layer: 5
   m_Name: GameController
   m_TagString: GameController
@@ -525,6 +526,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 147344, guid: 9b73bd159e7644d1a98277a3dda584c6, type: 2}
   combo: 0
+--- !u!114 &350420830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350420826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d844c2913c2e949a3b905216ab38f508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statName: WIS
 --- !u!1 &437454950
 GameObject:
   m_ObjectHideFlags: 0
