@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour {
 			// Game is finished
 
 			if (!this.scoreSaved) {
-				game.save.SaveStat();
+//				game.save.SaveStat();
 				this.scoreSaved = true;
 			}
 		}
