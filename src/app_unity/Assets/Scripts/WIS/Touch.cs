@@ -6,13 +6,14 @@ public class Touch : MonoBehaviour {
 
 	public Sprite spriteSuccess;
 	
-	private GameController gameController;
+	private GCWIS gameController;
 	private int scoreValue = 10 ;			//TODO add coefficien for lvl 
+
 	void Start () {
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null)
 		{
-			gameController = gameControllerObject.GetComponent <GameController>();
+			gameController = gameControllerObject.GetComponent <GCWIS>();
 		}
 		if (gameController == null)
 		{

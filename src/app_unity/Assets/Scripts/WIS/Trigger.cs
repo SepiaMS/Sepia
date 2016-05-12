@@ -15,7 +15,7 @@ public class Trigger : MonoBehaviour {
 		if (gameObject.GetComponent<SpriteRenderer> ().sprite.name != "wis success") { // wis succuess warning name of srpite
 			print ("On triger exit : wis succuessKO ");
 			FindObjectOfType<Generation> ().combo = false;
-			FindObjectOfType<GameController>().UpdateCombo();
+			FindObjectOfType<GCWIS>().UpdateCombo();
 		}
 	}
 }

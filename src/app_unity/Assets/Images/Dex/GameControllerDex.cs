@@ -39,6 +39,7 @@ public class GameControllerDex : MonoBehaviour {
 		countClick = 0;					// TODO check if resart work
 		SequenceStart ();
 		StartCoroutine (showStart());
+
 	
 	}
 

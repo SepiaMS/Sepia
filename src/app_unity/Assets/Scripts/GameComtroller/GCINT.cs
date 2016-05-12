@@ -3,35 +3,32 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class GameControllerInt : MonoBehaviour {
+public class GCINT : GameController {
 
-	public float	timer;
-	public Text		timerText;
 	public Text		yourturnText;
 	public Text		endText;
-	public Image	cooldown;
-
 
 	public float    delay;			// time wait between show /hide sequence 
 
 	public int		seqSize;
 	private int[] 	seq; 			// sequence of pc generation
 	private int[] 	seqPlayer; 		// sequence of Player
+
+
 	private int 	countClick;
-	public GameObject tmp;
+	private GameObject tmp;
 
 	public Sprite spriteSuccess;
-	public Sprite spriteSuccessBis;
-	public Sprite spriteBis;
+	public Sprite spriteSuccessUp;
+	public Sprite spriteUp;
 	public Sprite sprite;
 
-	private float	cd; 			//for "sablier" set with timer
 	private bool 	youturn = false;
 
 
 	// Use this for initialization
 	void Start () {
-		cd = timer;						// init cooldown with timer public 
+		base.cd = timer;
 		seq = new int[seqSize];			// init size of sequence
 		seqPlayer = new int[seqSize];
 		SequenceDemo ();				// init sequence 
@@ -48,23 +45,17 @@ public class GameControllerInt : MonoBehaviour {
 	}
 
 	void endGame(){
-//		if (countClick + 1 == seqSize)	// + 1 for alignement in sequence
 		youturn = false;
 		if (checkSeq())
-			endText.text = "WIN";
+			endText.text = "GAGNER";
 		else 
-			endText.text = "LOSE";
+			endText.text = "PERDU";
 	}
 
 	// Update is called once per frame
 	void Update (){
-
 		if (youturn) {
-			if (timer > 0) {	
-				cooldown.fillAmount -= 1.0f / cd * Time.deltaTime; //fill sablier
-				timer -= Time.deltaTime;
-			
-
+			base.CheckTimer();
 			if (countClick == seqSize  ){
 				print ("tmp END GAME count " + countClick + "seqSize = " + seqSize);
 				endGame();
@@ -72,8 +63,7 @@ public class GameControllerInt : MonoBehaviour {
 			else
 				Onclick();
 			}
-		}
-		printText ();
+		base.printText ();
 	}
 
 	void Onclick(){
@@ -96,12 +86,6 @@ public class GameControllerInt : MonoBehaviour {
 		}
 	}
 
-	void printText () {
-		if (timer <= 0)
-			timer = 0;
-		timerText.text = timer.ToString ("0.00");		// "0:00:00" format is possible 
-	}
-
 	private void SequenceDemo() {
 		for (int i = 0; i < seqSize; i++)
 			seq [i] = Random.Range(1, 7); 				// random 1-6 generate sequence
@@ -110,7 +94,7 @@ public class GameControllerInt : MonoBehaviour {
 	void ShowSprite(int iname){
 		tmp = GameObject.Find(iname.ToString());
 		if (tmp.name == "6") {
-			tmp.GetComponent<Image> ().sprite = spriteSuccessBis;
+			tmp.GetComponent<Image> ().sprite = spriteSuccessUp;
 		}
 		else
 			tmp.GetComponent<Image> ().sprite = spriteSuccess;
@@ -120,7 +104,7 @@ public class GameControllerInt : MonoBehaviour {
 	void HideSprite(int iname){
 		tmp = GameObject.Find(iname.ToString());
 		if (tmp.name == "6")
-			tmp.GetComponent<Image> ().sprite = spriteBis;
+			tmp.GetComponent<Image> ().sprite = spriteUp;
 		else 
 			tmp.GetComponent<Image> ().sprite = sprite;
 	}
