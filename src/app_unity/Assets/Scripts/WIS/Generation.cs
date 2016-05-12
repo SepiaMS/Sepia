@@ -7,7 +7,7 @@ public class Generation : MonoBehaviour {
 	
 	private int 			row;											//placement of drop in game
 	private int				rename = 0;
-	public bool combo;
+	public bool 			combo;
 
 	void Start(){
 		rename = 0;
