@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour {
 			// Game is finished
 			
 			if (!this.scoreSaved) {
-				//				game.save.SaveStat();
+				GameInformation.game.playerScore[Sepia.stat.WIS] = score;
 				this.scoreSaved = true;
 			}
 
