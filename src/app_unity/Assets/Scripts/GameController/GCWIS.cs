@@ -10,6 +10,7 @@ public class GCWIS : GameController {
 	void Start () {
 		base.cd = timer;
 		item = GetComponent<Generation> ();
+		base.init ();
 	}
 	
 	// Update is called once per frame

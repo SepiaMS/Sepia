@@ -13,7 +13,7 @@ public class Trigger : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D collider ) {
 		if (gameObject.GetComponent<SpriteRenderer> ().sprite.name != "wis success") { // wis succuess warning name of srpite
-			print ("On triger exit : wis succuessKO ");
+			//print ("On triger exit : wis succuessKO ");
 			FindObjectOfType<Generation> ().combo = false;
 			FindObjectOfType<GCWIS>().UpdateCombo();
 		}

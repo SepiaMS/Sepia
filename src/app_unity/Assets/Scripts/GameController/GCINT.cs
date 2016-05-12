@@ -34,6 +34,7 @@ public class GCINT : GameController {
 		SequenceDemo ();				// init sequence 
 		countClick = 0;					// TODO check if resart work
 		StartCoroutine ("showSequence");
+		base.init ();
 	}
 
 	bool checkSeq(){
@@ -50,6 +51,8 @@ public class GCINT : GameController {
 			endText.text = "GAGNER";
 		else 
 			endText.text = "PERDU";
+		GameInformation.game.playerScore [Sepia.stat.INT] = score;
+		print ("Score: " + GameInformation.game.playerScore [Sepia.stat.INT]);
 	}
 
 	// Update is called once per frame
