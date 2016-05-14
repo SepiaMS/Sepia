@@ -12,8 +12,8 @@ public class GameController : MonoBehaviour {
 	public Image	cooldown;
 
 	private bool	scoreSaved;
-	protected int		score;			// score to display
-	protected int		combo;			// combo to display
+	protected int	score;			// score to display
+	protected int	combo;			// combo to display
 	protected float	cd; 			//for "sablier" set with timer
 
 	private GameInformation game;
@@ -22,8 +22,8 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreSaved = false;
-		combo = 10;
-		score = 10;
+		combo = 0;
+		score = 0;
 		printText ();
 
 		cd = timer;
@@ -46,10 +46,17 @@ public class GameController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update (){
-		//print ("update GameControler");
 		CheckTimer ();
 		printText ();
 	}
+
+//	//	replace CheckTimer par EndGame
+//	protected bool EndGame(){
+//		if (CheckTimer ())
+//			return true;
+//		else
+//			return false; 
+//	}
 
 	public void CD(){
 		cooldown.fillAmount -= 1.0f / cd * Time.deltaTime; //fill sablier
@@ -73,8 +80,9 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void printText () {
-		if (scoreText != null)
-			scoreText.text = "Score\n" + score.ToString();
+		if (scoreText != null) {
+			scoreText.text = "Score\n" + score.ToString ();
+		}
 		if (timer <= 0)
 			timer = 0;
 		timerText.text = timer.ToString ("0.00");		// "0:00:00" format is possible 

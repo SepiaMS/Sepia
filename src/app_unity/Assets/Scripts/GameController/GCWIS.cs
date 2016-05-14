@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GCWIS : GameController {
 
+	public float timeBetween;
+
 	private Generation item;
 	private float spawn = 0.0f;
 	
@@ -22,7 +24,7 @@ public class GCWIS : GameController {
 	}
 
 	void Spawn(){
-		if (spawn > 1.0f) {
+		if (spawn > timeBetween) {
 			item.DropItem ();
 			spawn = 0.0f;
 		}
