@@ -83,13 +83,14 @@ public class GameInformation : MonoBehaviour {
 		// }
 		
 		
-		playerScore = new Dictionary<Sepia.stat, int> ();
-		
-		playerScore.Add(Sepia.stat.DEX, 0);
-		playerScore.Add(Sepia.stat.INT, 0);
-		playerScore.Add(Sepia.stat.STA, 0);
-		playerScore.Add(Sepia.stat.STR, 0);
-		playerScore.Add(Sepia.stat.WIS, 0);
+		playerScore = new Dictionary<Sepia.stat, int> ()
+		{
+			{ Sepia.stat.DEX, 0 },
+			{ Sepia.stat.INT, 0 },
+			{ Sepia.stat.STA, 0 },
+			{ Sepia.stat.STR, 0 },
+			{ Sepia.stat.WIS, 0 },
+		};
 		
 	}
 	
