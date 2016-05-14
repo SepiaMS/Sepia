@@ -48,6 +48,7 @@ public class GameInformation : MonoBehaviour {
 	
 	public static GameInformation game;
 
+	public LoadInformation load { get; set; }
 	public SaveInformation save { get; set; }
 	
 	/// The player’s inventory

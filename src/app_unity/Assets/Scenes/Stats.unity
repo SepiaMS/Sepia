@@ -164,7 +164,7 @@ GameObject:
   - 114: {fileID: 408090852}
   - 114: {fileID: 408090851}
   m_Layer: 5
-  m_Name: 'TEXT: Score (red)'
+  m_Name: 'TEXT: Score (STR)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - 114: {fileID: 724822418}
   - 114: {fileID: 724822417}
   m_Layer: 5
-  m_Name: 'TEXT: Score (green)'
+  m_Name: 'TEXT: Score (STA)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   - 114: {fileID: 909305497}
   - 114: {fileID: 909305496}
   m_Layer: 5
-  m_Name: 'TEXT: Score (purple)'
+  m_Name: 'TEXT: Score (WIS)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,7 +731,7 @@ GameObject:
   - 114: {fileID: 1251894776}
   - 114: {fileID: 1251894775}
   m_Layer: 5
-  m_Name: 'TEXT: Score (yellow)'
+  m_Name: 'TEXT: Score (DEX)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -874,6 +874,67 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1432273829}
+--- !u!1 &1574000244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1574000247}
+  - 114: {fileID: 1574000246}
+  - 114: {fileID: 1574000245}
+  m_Layer: 5
+  m_Name: StatsObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1574000245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574000244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c655776e152c44c7a21f1bc8e706d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1574000246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574000244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cceb0f52f2a4c3ba1b9261aa0a5024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statDEX: {fileID: 1251894776}
+  statINT: {fileID: 1941748218}
+  statSTA: {fileID: 724822418}
+  statSTR: {fileID: 408090852}
+  statWIS: {fileID: 909305497}
+--- !u!224 &1574000247
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574000244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1705698883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1290,7 @@ RectTransform:
   m_Children:
   - {fileID: 1864299334}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1384,7 +1445,7 @@ GameObject:
   - 114: {fileID: 1941748218}
   - 114: {fileID: 1941748217}
   m_Layer: 5
-  m_Name: 'TEXT: Score (blue)'
+  m_Name: 'TEXT: Score (INT)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
