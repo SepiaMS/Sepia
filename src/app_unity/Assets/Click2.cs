@@ -29,6 +29,7 @@ public class Click2 : MonoBehaviour, IPointerClickHandler {
 					questDescription.text = "Consultez ici votre score de mobilité, comptabilisé par l’application sur la base de votre nombre de pas.";
 					break;
 				case "STR":
+					gameToPlay = "STR";
 					questDescription.text = "Un jeu de motricité où vous devez garder une bille en équilibre en plaçant votre téléphone parallèlement au sol.";
 					break;
 				case "WIS":

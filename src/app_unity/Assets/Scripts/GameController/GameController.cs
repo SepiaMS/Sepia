@@ -96,25 +96,16 @@ public class GameController : MonoBehaviour {
  	}
 
 
-//	public void Onclick(){
-//		
-//		
-//		if (Input.GetMouseButtonDown (0)) {
-//			
-//			//Get the mouse position on the screen and send a raycast into the game world from that position.
-//			Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-//			RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero);
-//			
-//			//If something was hit, the RaycastHit2D.collider will not be null.
-//			if (hit.collider != null) {
-//				print ("Onclick");
-//				seqPlayer[countClick] = int.Parse(hit.collider.name); 
-//				Debug.Log (hit.collider.name);
-//				countClick++;
-//				StartCoroutine(showClick(int.Parse(hit.collider.name)));
-//			}
-//		}
-//	}
+	public bool Onclick(){
+		
+		if (Input.GetMouseButtonDown (0)) {
+			Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero);
+			if (hit.collider != null)
+				return true;
+		}
+		return false;
+	}
 
 
 }

@@ -25,9 +25,10 @@ public class CGDEX : GameController {
 	// Update is called once per frame
 	void Update () {
 		if (base.CheckTimer ()) {
-			Onclick ();
+			base.Onclick ();
+			ScoreUpdate ();
 		}
-		ScoreUpdate ();
+		
 		base.printText ();
 	}
 
@@ -52,24 +53,24 @@ public class CGDEX : GameController {
 	}
 
 	//TODO move this fonction to GameControler
-	void Onclick(){
-		
-		if (Input.GetMouseButtonDown (0)) {
-			
-			//Get the mouse position on the screen and send a raycast into the game world from that position.
-			Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero);
-			
-			//If something was hit, the RaycastHit2D.collider will not be null.
-			if (hit.collider != null) {
-				Debug.Log (hit.collider.name);
-
-
-				//				StartCoroutine(showClick(int.Parse(hit.collider.name)));
-				
-				
-			}
-		}
-	}
+//	void Onclick(){
+//		
+//		if (Input.GetMouseButtonDown (0)) {
+//			
+//			//Get the mouse position on the screen and send a raycast into the game world from that position.
+//			Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+//			RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero);
+//			
+//			//If something was hit, the RaycastHit2D.collider will not be null.
+//			if (hit.collider != null) {
+//				Debug.Log (hit.collider.name);
+//
+//
+//				//				StartCoroutine(showClick(int.Parse(hit.collider.name)));
+//				
+//				
+//			}
+//		}
+//	}
 
 }
