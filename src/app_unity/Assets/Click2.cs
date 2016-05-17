@@ -26,6 +26,7 @@ public class Click2 : MonoBehaviour, IPointerClickHandler {
 					questDescription.text = "Un jeu de mémoire où vous devez reproduire une combinaison de couleurs jouée préalablement par l’application.";
 					break;
 				case "STA":
+					gameToPlay = "STA";
 					questDescription.text = "Consultez ici votre score de mobilité, comptabilisé par l’application sur la base de votre nombre de pas.";
 					break;
 				case "STR":

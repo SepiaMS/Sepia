@@ -24,6 +24,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/INT.unity
   - enabled: 1
+    path: Assets/Scenes/STA.unity
+  - enabled: 1
     path: Assets/Scenes/WIS.unity
   - enabled: 1
     path: Assets/Scenes/STR.unity
