@@ -31,7 +31,6 @@ ExportedObj/
 Icon?
 ehthumbs.db
 Thumbs.db
-*/.#*#
 
 # =============== #
 # LaTeX generated #
@@ -62,3 +61,8 @@ Thumbs.db
 *.synctex.gz
 *.toc
 
+# ===== #
+# Other #
+# ===== #
+*#*#
+*.keystore
