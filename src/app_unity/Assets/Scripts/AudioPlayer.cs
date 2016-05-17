@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Audio : MonoBehaviour
+public class AudioPlayer : MonoBehaviour
 {
-	public GameObject obj_user_interface;
+	public GameObject obj_audio_mainmusic;
 
 	void Start()
 	{
-		obj_user_interface = GameObject.FindWithTag ("UserInterface");
+		obj_audio_mainmusic = GameObject.FindWithTag ("Main Music");
 	}
 
 	public void ft_audio_stop_all()
@@ -27,12 +27,17 @@ public class Audio : MonoBehaviour
 		if (obj_audio.isPlaying)
 		{
 			obj_audio.Stop();
-			obj_user_interface.GetComponent<AudioSource>().PlayDelayed(1.5f);
+			obj_audio_mainmusic.GetComponent<AudioSource>().PlayDelayed(1.5f);
 		}
 		else
 		{
 			ft_audio_stop_all();
 			obj_audio.Play();
 		}
+	}
+
+	public void ft_audio_set_volume(AudioSource obj_audio, float volume)
+	{
+		obj_audio.volume = volume;
 	}
 }

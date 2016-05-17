@@ -5,11 +5,11 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour
 {
-	public GameObject obj_user_interface;
+	public GameObject obj_audio_player;
 
 	void Start()
 	{
-		obj_user_interface = GameObject.FindWithTag ("UserInterface");
+		obj_audio_player = GameObject.FindWithTag ("Audio Player");
 	}
 
 	public void ft_inventory_slot_click_handler()
@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
 			break;
 		case "Audio":
 			AudioSource obj_audio = obj_inventory_item.GetComponent<AudioSource>();
-			obj_user_interface.GetComponent<Audio>().ft_audio_handle(obj_audio);
+			obj_audio_player.GetComponent<AudioPlayer>().ft_audio_handle(obj_audio);
 			break;
 		}
 	}
