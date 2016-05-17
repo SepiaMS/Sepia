@@ -11,8 +11,7 @@ public class CGDEX : GameController {
 
 	// TODO FOR DEBUG
 	public int dexScore;
-
-
+	
 	// Use this for initialization
 	void Start () {
 		base.cd = timer;
