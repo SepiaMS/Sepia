@@ -5,6 +5,6 @@ public class LoadHomeScene : LoadOnClick {
 
 	// Use this for initialization
 	void Start () {
-		LoadSceneByName ("Home");
+		LoadSceneByName ("Quests");
 	}
 }

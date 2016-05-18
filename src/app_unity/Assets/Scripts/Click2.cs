@@ -4,16 +4,16 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Click2 : MonoBehaviour, IPointerClickHandler {
+
 	public Click[] clicks;
-	
 	private static string gameToPlay;
 	
 	public void OnPointerClick (PointerEventData eventData) {
+
+		UnityEngine.UI.Text questDescription = GameObject.Find ("QuestScrollText").GetComponent<UnityEngine.UI.Text> ();
 		
 		foreach (Click c in clicks) {
 			if (c.Truc ()) {
-				
-				UnityEngine.UI.Text questDescription = GameObject.Find ("QuestScrollText").GetComponent<UnityEngine.UI.Text> ();
 				
 				switch (c.name) {
 					
@@ -41,6 +41,14 @@ public class Click2 : MonoBehaviour, IPointerClickHandler {
 				}
 				
 				return;
+			} else {
+
+				gameToPlay = null;
+
+				// FIXME: Bug when NO click inside the pentagon is made, AND `gameToPlay` has previously been set (for example: select game, go to another tab, then go back).
+				// FIXME: This is probably due to the fact that the “old” Quest scene still lives (since we use `LoadSceneAdditive` in the menu), and is updated instead of the new one.
+				// TODO: Try to make a gameObject in every scene, and all elements (UI, etc.) are children of it; upon loading another scene: Destroy() this gameObject.
+
 			}
 		}
 
